@@ -21,7 +21,7 @@ interface BudgetFormProps {
 export function BudgetForm({ onSubmit, isLoading }: BudgetFormProps) {
   const [formData, setFormData] = useState({
     income: "",
-    family_size: "4",
+    family_size: "1",
     vehicles: "0",
     months_ahead: "1",
     use_inflation: true,
@@ -32,7 +32,7 @@ export function BudgetForm({ onSubmit, isLoading }: BudgetFormProps) {
     e.preventDefault();
     
     const submitData = {
-      income: parseFloat(formData.income),
+      income: parseFloat(formData.income.replace(/,/g, "")),
       family_size: parseInt(formData.family_size),
       vehicles: parseInt(formData.vehicles),
       months_ahead: parseInt(formData.months_ahead),

@@ -56,7 +56,7 @@ const Index = () => {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-6">
+        <div className={`space-y-6`} >
           {!results ? (
             <BudgetForm onSubmit={handleSubmit} isLoading={isLoading} />
           ) : (
