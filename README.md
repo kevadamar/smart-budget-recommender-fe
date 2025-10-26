@@ -1,123 +1,81 @@
-# Smart Budget Recommendation
+# Welcome to your Lovable project
 
-AI-powered budget recommendation application that helps users track spending, save smarter, and achieve their financial goals.
+## Project info
 
-## Tech Stack
+## Environment Variables
 
-- **Vite** - Fast build tool and development server
-- **TypeScript** - Type-safe development
-- **React 18** - UI framework
-- **shadcn/ui** - Component library built on Radix UI
-- **Tailwind CSS** - Utility-first styling
-- **React Router** - Client-side routing
-- **TanStack Query** - Server state management
-- **React Hook Form** - Form handling with Zod validation
-- **Recharts** - Data visualization
+This project uses environment variables for configuration. Create a `.env` file in the root directory:
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18 or higher
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd smart-budget-recommendation-fe
+```env
+VITE_API_URL=http://localhost:3000
 ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+### Required Environment Variables
 
-3. Start the development server:
-```bash
+- `VITE_API_URL`: The base URL for your API backend (e.g., `http://localhost:3000` for local development or `https://your-api-domain.com` for production)
+
+### Setting Up Environment Variables
+
+1. Copy the example environment file:
+   ```sh
+   cp .env.example .env
+   ```
+
+2. Edit the `.env` file with your preferred text editor
+3. Update the `VITE_API_URL` variable with your API endpoint
+4. Save the file and restart your development server
+
+## How can I edit this code?
+
+There are several ways of editing your application.
+
+**Use your preferred IDE**
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Create environment variables file.
+cp .env.example .env
+
+# Step 5: Configure your API URL.
+# Edit the .env file and set your API endpoint:
+# VITE_API_URL=http://localhost:3000  # Replace with your API URL
+
+# Step 6: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-The application will be available at `http://localhost:8080`
+**Edit a file directly in GitHub**
 
-## Development
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-### Available Scripts
+**Use GitHub Codespaces**
 
-```bash
-# Start development server with hot reload
-npm run dev
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-# Build for production
-npm run build
+## What technologies are used for this project?
 
-# Build for development/staging
-npm run build:dev
+This project is built with:
 
-# Preview production build locally
-npm run preview
-
-# Run linter
-npm run lint
-```
-
-### Project Structure
-
-```
-src/
-├── components/
-│   └── ui/          # shadcn/ui components
-├── hooks/           # Custom React hooks
-├── lib/             # Utility functions
-├── pages/           # Route pages
-├── App.tsx          # Main app component with routing
-├── main.tsx         # Entry point
-└── index.css        # Global styles
-```
-
-### Adding New Routes
-
-Add routes in `src/App.tsx` before the catch-all `*` route:
-
-```tsx
-<Route path="/new-page" element={<NewPage />} />
-```
-
-### Path Aliases
-
-Use these import aliases:
-- `@/` → `src/`
-- `@/components` → `src/components`
-- `@/lib` → `src/lib`
-- `@/hooks` → `src/hooks`
-
-## Deployment
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions including:
-- GitHub Actions CI/CD setup
-- Private server deployment
-- Web server configuration (Nginx/Apache)
-- Environment variables
-- Troubleshooting
-
-## Features
-
-- 📊 Budget tracking and forecasting
-- 💬 AI-powered chat for financial advice
-- 📈 Interactive data visualizations
-- 👤 User profile management
-- 🌙 Dark mode support
-- 📱 Responsive design
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is private and proprietary.
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
