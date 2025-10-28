@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Loader2, Calculator } from "lucide-react";
+import { trackBudgetSubmission } from "@/utils/analytics";
 import {
   Select,
   SelectContent,
@@ -30,7 +31,7 @@ export function BudgetForm({ onSubmit, isLoading }: BudgetFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const submitData = {
       income: parseFloat(formData.income.replace(/,/g, "")),
       family_size: parseInt(formData.family_size),
@@ -38,8 +39,10 @@ export function BudgetForm({ onSubmit, isLoading }: BudgetFormProps) {
       months_ahead: parseInt(formData.months_ahead),
       use_inflation: formData.use_inflation,
       model_type: formData.model_type,
+      has_debt: false, // You can update this if you add a debt field
     };
 
+    trackBudgetSubmission(submitData);
     onSubmit(submitData);
   };
 
